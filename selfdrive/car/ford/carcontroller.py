@@ -228,7 +228,7 @@ class CarController:
             self.lane_change = False
 
         # if at highway speeds, check for straight aways and apply anti ping pong logic
-        if vEgoRaw > 24.56:
+        if vEgoRaw > 15:
           if abs(apply_curvature) < self.max_app_curvature and curvature_1 < self.max_app_curvature and curvature_2 < self.max_app_curvature and curvature_3 < self.max_app_curvature:
               apply_curvature = ((predicted_curvature * self.app_PC_percentage) + (apply_curvature * (1- self.app_PC_percentage)))
               self.precision_type = 0 # comfort for straight aways
